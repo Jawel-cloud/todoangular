@@ -1,0 +1,40 @@
+li{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    border-radius: 10px;
+    min-width: 20vw;
+    min-height: 7vh;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 7vh;
+    padding-left: 5px;
+    font-weight: bold;
+    color: white;
+    p{
+      margin: 0;
+      margin-right: 10px;
+    }
+    .liDate{
+      font-weight: 400;
+      color: rgb(212, 212, 212);
+    }
+
+}
+.odd-li{
+  background-color: rgba(41, 41, 41, 0.5);
+}
+.last-li{
+  background-color: rgb(80, 205, 255);
+}
+
+button{
+  border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+  li{
+    min-width: 30vw;
+  }
+}

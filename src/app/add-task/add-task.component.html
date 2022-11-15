@@ -1,0 +1,12 @@
+<div class="add-taskComponent">
+<div>
+  <ng-container *ngIf="addingVisibility; then addingOn; else addingOff"></ng-container>
+  <ng-template #addingOff><button (click)="switchAddingVisibility()">+</button></ng-template>
+  <ng-template #addingOn><button (click)="switchAddingVisibility()">Adding complete</button></ng-template>
+</div>
+<div *ngIf="addingVisibility">
+  <input type="text" [(ngModel)]="newTask">
+  <input type="date" [(ngModel)]="newDate">
+  <button (click)="add()" [disabled]="newTask === '' || newDate === null " >Add</button>
+</div>
+</div>

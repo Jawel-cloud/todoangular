@@ -1,0 +1,11 @@
+<ng-container *ngIf="tasksDone.length>0; else noTask">
+<div [ngStyle]="{'color': '#000', 'fontWeight':'bold'}">
+   Tasks done ({{tasksDone.length}}) <button (click)="clearAll(false)">Clear</button>
+  <ul>
+    <li appTaskComplete appTaskDate [date]="task.end" *ngFor="let task of tasksDone">
+      <button (click)="remove(task)">X</button> <p>{{task.name}}</p>
+    </li>
+  </ul>
+</div>
+</ng-container>
+<ng-template #noTask><p [ngStyle]="{'color': '#FFF', 'fontWeight':'bold'}">Brak wykonanych zadań ;)</p></ng-template>

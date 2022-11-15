@@ -1,0 +1,25 @@
+li{
+  margin: 5px;
+  font-size: 16px;
+  min-width: 25vw;
+  height: 5vh;
+  display: flex;
+  line-height: 5vh;
+  font-weight: bold;
+  color: rgb(139, 139, 139);
+  p{
+    margin-left: 1vw;
+    text-decoration: line-through;
+  }
+
+}
+
+button{
+border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+  li{
+    min-width: 35vw;
+  }
+}

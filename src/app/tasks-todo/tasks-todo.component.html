@@ -1,0 +1,14 @@
+<ng-container *ngIf="tasksToDo.length>0; else noTask">
+  <div [ngStyle]="{'color': getColor(), 'fontWeight':'bold'}">Tasks to do   ({{tasksToDo.length}})   <button (click)="clearAll(true)">Clear</button></div>
+  <ol>
+    <li *ngFor="let task of tasksToDo | sortTasks; let odd=odd;" [ngClass]="{'odd-li': odd===true, 'last-li':tasksToDo.length===1}">
+      <p>{{task.name | taskDisplay: '! '}}</p>
+      <p class="liDate">{{task.deadline | date}}</p>
+      <div class="taskButtons">
+      <button (click)="done(task)">&#10003;</button>
+      <button (click)="remove(task)">X</button>
+    </div>
+    </li>
+  </ol>
+</ng-container>
+<ng-template #noTask><p [ngStyle]="{'color': '#FFF', 'fontWeight':'bold'}">Brak zadań ;)</p></ng-template>
